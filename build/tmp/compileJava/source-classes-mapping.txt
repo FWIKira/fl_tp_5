@@ -1,0 +1,8 @@
+temperature/IConversion.java
+ temperature.IConversion
+temperature/Atester.java
+ temperature.Atester
+temperature/Conversion.java
+ temperature.Conversion
+temperature/AtesterWithInterface.java
+ temperature.AtesterWithInterface

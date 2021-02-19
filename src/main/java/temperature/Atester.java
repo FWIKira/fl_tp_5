@@ -10,11 +10,13 @@ private Conversion conversion ;
     public double convertit(double temperature,String sens ) throws Exception {
 
         if (sens.equals("F2C")){
-          return  conversion.convF2C(temperature);
+          return this.conversion.convF2C(temperature);
+
         }
 
         else if (sens.equals("C2F")){
-           return  conversion.convC2F(temperature);
+           return this.conversion.convC2F(temperature);
+
         }
 
         else {
