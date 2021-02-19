@@ -34,18 +34,17 @@ public class testMockitoAtester {
 
     @Test
     public void testconvertit() throws Exception {
-       double temp1 = 32.0;
-       double temp2 = 100.0;
-       when(conv.convF2C(temp1)).thenReturn(((temp1 - 32.0) * 5.0) / 9.0);
-        when(conv.convC2F(temp2)).thenReturn((temp2 * 9.0 / 5.0) + 32.0);
+        //probleme ici qu'on peut pas utiliser AnyDouble comme ça (solution non résolue encore )
+        when(conv.convF2C(any(Double.class))).thenReturn(((any(Double.class) - 32.0) * 5.0) / 9.0);
+        when(conv.convC2F(any(Double.class))).thenReturn((any(Double.class) * 9.0 / 5.0) + 32.0);
 
         atester = new Atester(conv);
-        double value2=atester.convertit(temp2,"C2F");
+        double value2=atester.convertit(100.0,"C2F");
         System.out.println(value2);
         double expected2=212.0 ;
-        double value1=atester.convertit(temp1,"F2C");
+        double value1=atester.convertit(-40,"F2C");
         System.out.println(value1);
-        double expected1= 0.0 ;
+        double expected1= -40 ;
 
         assertTrue( value2==expected2 && value1==expected1);
 
